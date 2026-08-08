@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080a10">
+<title>Reader • ComicNova</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="reader-mode">
+
+<header class="topbar reader-topbar" aria-label="Reader navigation">
+  <div class="container topbar-inner">
+    <a class="brand" href="index.html" aria-label="ComicNova Home">
+      <span class="brand-wordmark" aria-label="ComicNova"><span class="brand-comic">Comic</span><span class="brand-nova">Nova</span></span>
+    </a>
+    <div class="reader-chapter-center">
+      <strong data-comic-title>Comic</strong>
+      <span id="chapterStatus">Chapter 1 / 10</span>
+    </div>
+    <a class="icon-btn" href="detail.html" aria-label="Kembali ke detail">×</a>
+  </div>
+</header>
+
+<main class="page reader-page-shell"><div class="container">
+  <div class="reader">
+    <div class="reader-toolbar" id="readerToolbar">
+      <button class="btn secondary" id="prevChapter" type="button">← Prev</button>
+      <div class="reader-toolbar-title">
+        <b data-comic-title>Comic</b>
+        <span id="chapterNo">Chapter 1</span>
+      </div>
+      <button class="btn secondary" id="nextChapter" type="button">Next →</button>
+    </div>
+
+    <div class="reader-pages" id="readerPages">
+      <section class="reader-page-panel">
+        <div class="eyebrow">COMIC READER</div>
+        <h1 data-comic-title>Comic</h1>
+        <p id="readerChapter">Chapter 1</p>
+        <div class="reader-demo-note">Area halaman komik. Ganti blok ini dengan gambar halaman komik asli ketika konten sudah tersedia.</div>
+      </section>
+      <section class="reader-page-panel"><div class="reader-placeholder">PAGE 02</div></section>
+      <section class="reader-page-panel"><div class="reader-placeholder">PAGE 03</div></section>
+      <section class="reader-page-panel"><div class="reader-placeholder">PAGE 04</div></section>
+      <section class="reader-page-panel"><div class="reader-placeholder">PAGE 05</div></section>
+    </div>
+
+    <div class="reader-end panel panel-pad" id="chapterEnd">
+      <div class="eyebrow">CHAPTER COMPLETE</div>
+      <h2>Chapter selesai.</h2>
+      <p>Kontrol chapter dimunculkan lagi di bagian atas supaya kamu bisa lanjut membaca.</p>
+      <div class="actions">
+        <button class="btn secondary" id="prevChapterBottom" type="button">← Prev</button>
+        <button class="btn" id="nextChapterBottom" type="button">Next →</button>
+      </div>
+    </div>
+  </div>
+</div></main>
+
+<div class="toast"></div>
+<script src="js/navigation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/reader.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const prevTop = document.querySelector('#prevChapter');
+    const nextTop = document.querySelector('#nextChapter');
+    document.querySelector('#prevChapterBottom')?.addEventListener('click', () => prevTop?.click());
+    document.querySelector('#nextChapterBottom')?.addEventListener('click', () => nextTop?.click());
+  });
+</script>
+</body>
+</html>

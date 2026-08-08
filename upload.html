@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080a10"><title>Upload Komik • ComicNova</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="container topbar-inner">
+<a class="brand" href="index.html" aria-label="ComicNova Home"><span class="brand-wordmark"><span class="brand-comic">Comic</span><span class="brand-nova">Nova</span></span></a>
+<form class="search" action="search.html"><input name="q" data-search placeholder="Cari judul manga, manhwa..." aria-label="Cari"><button type="submit" aria-label="Cari"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button></form>
+<a class="icon-btn" href="profile.html" aria-label="Profil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></a>
+</div></header>
+<main class="page"><div class="container">
+<section class="page-head"><div class="eyebrow">CREATOR STUDIO</div><h1>Upload Komik</h1><p>Upload cover dan satu chapter dalam format <strong>.ZIP</strong>. Semua gambar di dalam ZIP akan diurutkan otomatis.</p></section>
+<div class="panel panel-pad"><form id="uploadForm">
+<div class="upload-grid"><div>
+<div class="form-group"><label>Judul Komik</label><input id="comicTitle" required maxlength="120" placeholder="Contoh: My New Story"></div>
+<div class="form-group"><label>Nomor Chapter</label><input id="chapterNumber" type="number" min="1" step="1" value="1" required></div>
+<div class="form-group"><label>Genre</label><input id="comicGenre" required maxlength="80" placeholder="Action • Fantasy"></div>
+<div class="form-group"><label>Deskripsi</label><textarea id="comicDescription" rows="7" maxlength="1000" placeholder="Ceritakan komikmu..."></textarea></div>
+<div class="form-group"><label>Cover</label><input id="comicCover" type="file" accept="image/jpeg,image/png,image/webp" required></div>
+</div><div>
+<div class="upload-preview" id="coverPreview"><span style="color:var(--muted);font-size:12px">Preview cover</span></div>
+<div class="form-group" style="margin-top:14px"><label>Chapter ZIP</label><input id="chapterZip" type="file" accept=".zip,application/zip,application/x-zip-compressed" required><small class="form-help">Contoh: <code>chapter-01.zip</code> berisi 001.jpg, 002.jpg, 003.jpg, dst.</small></div>
+<div class="file-list" id="pageList"></div></div></div>
+<div class="actions" style="margin-top:18px"><button class="btn" type="submit">Simpan & Upload ZIP</button><a class="btn secondary" href="profile.html">Batal</a></div>
+<p class="auth-note">Format halaman: JPG, JPEG, PNG, WEBP, atau GIF di dalam ZIP. ZIP terenkripsi tidak didukung.</p>
+</form></div></div></main>
+<nav class="bottom-nav" data-bottom-nav></nav><div class="toast"></div>
+<script src="js/navigation.js"></script><script src="js/main.js"></script><script src="js/zip-reader.js"></script><script src="js/upload.js"></script>
+</body></html>
